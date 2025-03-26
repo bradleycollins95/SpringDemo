@@ -156,7 +156,7 @@ public class MainController {
             homeRepository.save(home);
             return "Home with ID " + homeId + " updated successfully.";
         } else {
-            return "Home with ID " + homeId + " not found.";
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Home with ID " + homeId + " not found.");
         }
     }
 
@@ -171,7 +171,7 @@ public class MainController {
             homeRepository.deleteById(homeId);
             return "Home with ID " + homeId + " deleted successfully.";
         } else {
-            return "Home with ID " + homeId + " not found.";
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Home with ID " + homeId + " not found.");
         }
     }
 
@@ -215,7 +215,7 @@ public class MainController {
         if (userRepository.existsById(userId)) {
             return autoRepository.getAllByUserId(userId);
         } else {
-            return null; // Handle errors better in production
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
         }
     }
 
@@ -284,7 +284,7 @@ public class MainController {
             autoRepository.save(auto);
             return "Auto updated successfully.";
         }
-        return "Auto not found.";
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Auto not found");
     }
 
     /**
@@ -298,7 +298,7 @@ public class MainController {
             autoRepository.deleteById(autoId);
             return "Auto deleted successfully.";
         }
-        return "Auto not found.";
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Auto not found");
     }
 
 }
