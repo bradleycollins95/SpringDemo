@@ -22,7 +22,7 @@ public class Auto {
      */
     @ManyToOne
     @JoinColumn(name="user_id")
-    private User user;      //User can have many homes - this will maintain the relationship
+    private User user;      //User can have many automobiles - this will maintain the relationship
 
     /**
      * Gets the ID of the auto.
