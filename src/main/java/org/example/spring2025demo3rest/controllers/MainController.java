@@ -118,13 +118,10 @@ public class MainController {
             Optional<User> user = userRepository.findById(userId);
             if(user.isPresent()){
                // homeRepository
-
                 homes = homeRepository.getAllByUserId(userId);
             }
         }
-
         //TODO handle errors
-
         return homes;
     }
 
@@ -203,7 +200,6 @@ public class MainController {
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
         }
-
         return home;
     }
 
