@@ -22,14 +22,14 @@ public class UserTester {
     public static void main(String[] args) {
         System.out.println("=== Basic Object Creation Test ===");
 
-        // Create and test User
+        //create an instantiation and tester for User object
         User user = new User();
         user.setName("Test Testerson");
         user.setEmail("tester@example.com");
 
         System.out.printf("User created -> Name: %s, Email: %s\n", user.getName(), user.getEmail());
 
-        // Create and test Home
+        //create an instantiation and tester for Home object
         Home home = new Home();
         home.setValue(250000);
         home.setDateBuilt(LocalDate.of(2015, 6, 15));
@@ -38,7 +38,7 @@ public class UserTester {
         System.out.printf("Home created -> Value: $%d, Date Built: %s, Linked User: %s\n",
                 home.getValue(), home.getDateBuilt(), home.getUser().getName());
 
-        // Create and test Auto
+        //create an instantiation and tester for Auto object
         Auto auto = new Auto();
         auto.setMake("Honda");
         auto.setModel("Civic");
